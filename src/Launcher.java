@@ -6,6 +6,7 @@ public class Launcher {
 	 Game game = new Game("Game!", 600, 600);
 	 game.start();
  
+	 // HI :)
 		
 	}
 	
