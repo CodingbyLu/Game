@@ -10,6 +10,7 @@ public class GameState extends State{
 		super(handler);
 		
 		world = new World(handler, "res/worlds/world");
+		
 		handler.setWorld(world);
 		player = new Player(handler, 0, 0);
 		
