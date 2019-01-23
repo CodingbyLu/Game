@@ -105,6 +105,7 @@ public class Assets {
 		sky3210 = World.crop(26 + 23 * 27, 3 + 23 * 9, pWidth, pHeight);
 		sky3211 = World.crop(26 + 23 * 28, 3 + 23 * 9, pWidth, pHeight);
 		
+		//einfarbig :  hell 20 7 und dunkel 26 9
 	}
 
 }

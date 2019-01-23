@@ -50,10 +50,10 @@ public class Player extends Creature {
 		g.drawImage(Assets.player, (int) (x - handler.getGameCamers().getxOffset()),
 				(int) (y - handler.getGameCamers().getyOffset()), width, height, null); 
 		
-		g.setColor(Color.red);
-		g.fillRect((int) (x + bounds.x -handler.getGameCamers().getxOffset()),
-		(int) (y + bounds.y -handler.getGameCamers().getyOffset()),
-		bounds.width, bounds.height);
+	//	g.setColor(Color.red);
+	//	g.fillRect((int) (x + bounds.x -handler.getGameCamers().getxOffset()),
+	//	(int) (y + bounds.y -handler.getGameCamers().getyOffset()),
+	//	bounds.width, bounds.height);
 		
 	}
 
