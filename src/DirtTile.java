@@ -6,5 +6,9 @@ public class DirtTile extends Tile {
 		super(Assets.dirt, id);
 		
 	}
+	public boolean isSolid() {
+		return true;
+		
+	}
 
 }

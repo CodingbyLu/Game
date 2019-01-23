@@ -36,9 +36,9 @@ public class Game implements Runnable {
 	
 	public Game(String pTitle, int pWidth, int pHeight) {
 	
+   title = pTitle;
 	width = pWidth;
 	height = pHeight;
-	title = pTitle;
 	keyManager = new KeyManager();
 
 	}

@@ -6,5 +6,8 @@ public class SandTile2 extends Tile {
 		super(Assets.sand2, id);
 		
 	}
-
+	public boolean isSolid() {
+		return true;
+		
+	}
 }

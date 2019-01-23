@@ -7,4 +7,8 @@ public class IceTile extends Tile {
 		// TODO Auto-generated constructor stub
 	}
 
+	public boolean isSolid() {
+		return false;
+		
+	}
 }

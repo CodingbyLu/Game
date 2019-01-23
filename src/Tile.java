@@ -18,6 +18,8 @@ public class Tile {
 	
 	public static Tile lavaTile = new LavaTile(6);
 	
+	public static Tile rockTile = new RockTile(7);
+	public static Tile rockTile2 = new RockTile2(8);
 	
 	//Class
 	

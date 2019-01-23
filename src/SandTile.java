@@ -8,5 +8,10 @@ public class SandTile extends Tile {
 		super(Assets.sand, id);
 		
 	}
+	
+	public boolean isSolid() {
+		return true;
+		
+	}
 
 }

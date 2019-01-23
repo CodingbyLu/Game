@@ -1,10 +1,12 @@
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public abstract class Entity {
 	
 	protected float x, y;
 	protected int width, height;
 	protected Handler handler;
+	protected Rectangle bounds;
 	
 	public Entity(Handler handler, float pX, float pY, int pWidth, int pHeight) {
 	    this.handler = handler;
@@ -12,6 +14,8 @@ public abstract class Entity {
 		y = pY;
 		height = pHeight;
 		width = pWidth;
+		
+		bounds = new Rectangle(0, 0, width, height);
 		
 	}
 	

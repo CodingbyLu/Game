@@ -7,6 +7,9 @@ public class DirtTile2 extends Tile {
 		
 	}
 	
-	
+	public boolean isSolid() {
+		return true;
+		
+	}
 
 }
