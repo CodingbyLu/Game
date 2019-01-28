@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.concurrent.TimeUnit;
 
 public class Player extends Creature {
 
@@ -16,25 +17,37 @@ public class Player extends Creature {
 
 	
 	public void tick() {
+		
 		//where we update variables for an object
 		getInput();	
+		// fall();
 		move();
+		
 		handler.getGameCamers().centerOnEntity(this);
 	}
+	
+	
+	
+		
+	
 	
 	private void getInput() {
 		//Moving 
 		
+		
 		xMove = 0;
 		yMove = 0;
-		if(handler.getKeyManager().up) {
-			yMove = -speed;
-			
-			}
-		if(handler.getKeyManager().down) {
-			yMove = speed;
-			}
 		
+		if(handler.getKeyManager().up) {
+			  yMove = -speed;
+				
+					
+					}
+		
+		if(handler.getKeyManager().down) {
+		yMove = speed;
+			}	
+	
 		if(handler.getKeyManager().left) {
 			xMove = -speed;
 			}
@@ -46,6 +59,9 @@ public class Player extends Creature {
 	}
 
 	
+	
+
+
 	public void render(Graphics g) {
 		g.drawImage(Assets.player, (int) (x - handler.getGameCamers().getxOffset()),
 				(int) (y - handler.getGameCamers().getyOffset()), width, height, null); 

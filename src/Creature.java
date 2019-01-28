@@ -7,20 +7,34 @@ public abstract class Creature extends Entity {
 	public static final int DEFAULT_CREATURE_WIDTH = 50;
 	public static final int DEFAULT_CREATURE_HEIGHT = 50;
 	
+	//gravity try
+	protected double gravity;
+	protected boolean falling = true;
+	protected boolean canJump;
+	protected double maxJump;
+	
+	
 	protected int health;
 	protected float speed;
 	protected float xMove, yMove;
+	
 	
 	
 	public Creature(Handler handler, float pX, float pY, int pWidth, int pHeight) {
 		super(handler, pX, pY, pWidth, pHeight);
 		health = DEFAULT_HEALTH;
 		speed = DEFAULT_SPEED;
+	
+		//new 
+		//gravity = 0.5;
+		//maxJump = 1;
+		
 		xMove = 0;
 		yMove = 0;
 	}
 	
 	public void move() {
+		
 		moveX();
 		moveY();
 	
@@ -28,6 +42,8 @@ public abstract class Creature extends Entity {
 	
 	public void moveX(){
 		if(xMove > 0){ 
+			
+			
 			
 			int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 		
@@ -54,18 +70,28 @@ public abstract class Creature extends Entity {
 	
 	public void moveY(){ // last changed
 		
+	
+		
 		if(yMove < 0) {
 			
+
 			int ty = (int) (y + yMove +bounds.y) / Tile.TILEHEIGHT;
 			
 			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) && 
 					!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty)) {
+				//new
+				//canJump = true;
+				
 				y += yMove;
+				
 			}else {
 				y = ty * Tile.TILEHEIGHT + Tile.TILEHEIGHT - bounds.y;
 			}
 			
 		}else if(yMove > 0) {
+			
+			
+			
          int ty = (int) (y + yMove +bounds.y + bounds.height) / Tile.TILEHEIGHT;
 			
 			if(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) && 
@@ -76,11 +102,30 @@ public abstract class Creature extends Entity {
 			}
 		}
 		
-	}
+			
+			
+		}
+		
+		
+	
 	
 	protected boolean collisionWithTile(int x, int y) {
 		return handler.getWorld().getTile(x, y).isSolid();
 	}
+	
+	//new
+	
+//	protected void fall() {
+//		
+//		if(falling)
+//		{
+//			yMove += gravity;
+//			if(yMove > maxJump) {
+//				yMove = (float) maxJump;
+//			}
+//		}
+//	}
+//	
 	//Getters & Setters
 
 	public float getxMove() {
